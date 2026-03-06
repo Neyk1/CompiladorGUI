@@ -203,6 +203,7 @@ namespace Compilador.UI.Forms
             {
                 txtEstatus.Text = "Analizador lexico iniciado";
                 txtEstatus.ForeColor = Color.Red;
+
             }
         }
     }
