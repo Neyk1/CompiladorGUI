@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Compilador.Clases;
 
 namespace Compilador.UI.Forms
 {
@@ -198,13 +199,17 @@ namespace Compilador.UI.Forms
 
         private void btnCompilar_Click(object sender, EventArgs e)
         {
-            //Actvidad 2 boton compilar debe validar que haya texto, en caso contrario mandar mensaje a txtEstatus
-            if (txtEditor.Text == "")
-            {
-                txtEstatus.Text = "Analizador lexico iniciado";
-                txtEstatus.ForeColor = Color.Red;
+           
+            //Practica3 Conectar el boton Compilar
+            limpiar(); // Limpiar los campos antes de compilar
+            txtEstatus.AppendText("Ha iniciado el lexico" + Environment.NewLine);
 
-            }
+            //1. Obtener el texto de la text area
+            var fuente = CodigoFuente.DesdeTexto(txtFuente.Text);
+
+
         }
+
+        
     }
 }
